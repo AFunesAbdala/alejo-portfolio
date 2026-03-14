@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./componentes/Navbar";
 import ArrowUpIcon from "./icons/ArrowUpIcon";
 import HandIcon from "./icons/HandIcon";
@@ -7,9 +6,9 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center bg-zinc-50">
       <Navbar></Navbar>
-      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-360">
-        <div className="flex flex-col gap-64 w-full max-w-283.5">
-          <div className="flex flex-col items-center gap-28">
+      <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
+        <div className="flex flex-col gap-52 w-full max-w-283.5">
+          <div className="flex flex-col items-center gap-25">
             <div className="w-full flex flex-row gap-12.5">
               <a href="#" className="flex flex-row items-center gap-2 text-sm">
                 LINKEDIN
