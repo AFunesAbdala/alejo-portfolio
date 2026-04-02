@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50">
       <Navbar></Navbar>
-      <EyeAnimation></EyeAnimation>
+      <div className="absolute w-full flex flex-col items-center -z-1 -top-18 inset-0">
+        <EyeAnimation></EyeAnimation>
+      </div>
       <DecorativeFrame></DecorativeFrame>
       <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
         <div className="flex flex-col gap-52 w-full max-w-283.5">
@@ -292,8 +294,16 @@ export default function Home() {
       </div>
       <div className="flex w-full max-w-360 overflow-hidden">
         <div className="relative flex items-center justify-center w-180 h-180">
-          <CircleBorder rotate={"rotate-[-90deg]"} r="50%" color="#d4d4d8"></CircleBorder>
-          <CircleBorder rotate={"rotate-[-225deg]"} r="48.5%" color="#a1a1aa"></CircleBorder>
+          <CircleBorder
+            rotate={"rotate-[-90deg]"}
+            r="50%"
+            color="#d4d4d8"
+          ></CircleBorder>
+          <CircleBorder
+            rotate={"rotate-[-225deg]"}
+            r="48.5%"
+            color="#a1a1aa"
+          ></CircleBorder>
           <div className="relative flex items-center w-175 h-175 rounded-full overflow-hidden">
             <div className="absolute flex flex-col items-center gap-2">
               <div className="max-w-175 flex items-center">
@@ -390,8 +400,16 @@ export default function Home() {
           </div>
         </div>
         <div className="relative flex items-center justify-center w-180 h-180">
-          <CircleBorder rotate={"rotate-[-0deg]"} r="50%" color="#d4d4d8"></CircleBorder>
-          <CircleBorder rotate={"rotate-[-225deg]"} r="48.5%" color="#a1a1aa"></CircleBorder>
+          <CircleBorder
+            rotate={"rotate-[-0deg]"}
+            r="50%"
+            color="#d4d4d8"
+          ></CircleBorder>
+          <CircleBorder
+            rotate={"rotate-[-225deg]"}
+            r="48.5%"
+            color="#a1a1aa"
+          ></CircleBorder>
           <div className=" flex items-center justify-center w-175 h-175 rounded-full overflow-hidden">
             <img
               src="https://i.pinimg.com/736x/aa/88/89/aa8889318f0dbd57d584f8b68f039211.jpg"
