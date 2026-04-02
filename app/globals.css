@@ -26,3 +26,32 @@ body {
   font-size: 17px;
   line-height: 24px;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollr {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-r {
+  animation: scrollr 40s linear infinite;
+}
+/* * {
+  outline: 1px dotted rgba(255, 0, 0, 0.3);
+} */
