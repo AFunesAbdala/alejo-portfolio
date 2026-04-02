@@ -36,7 +36,7 @@ function EyeAnimation() {
   };
 
   const iris = limit(pos.x, pos.y, 30);
-  const pupil = limit(pos.x, pos.y, 15);
+  const pupil = limit(pos.x, pos.y, 30);
 
   return (
     <div
