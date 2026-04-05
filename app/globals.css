@@ -45,6 +45,34 @@ body {
   }
 }
 
+@keyframes rotate {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes rotate-r {
+  from { 
+    transform: rotate(360deg); 
+  }
+  to { 
+    transform: rotate(0deg); 
+  }
+}
+
+.animate-rotate {
+  transform-origin: center;
+  animation: rotate 80s linear infinite;
+}
+
+.animate-rotate-r {
+  transform-origin: center;
+  animation: rotate-r 80s linear infinite;
+}
+  
 .animate-scroll {
   animation: scroll 40s linear infinite;
 }

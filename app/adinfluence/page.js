@@ -7,8 +7,6 @@ import ArrowUpIcon from "../icons/ArrowUpIcon";
 import DecorativeFrame from "../componentes/DecorativeFrame";
 import CTAButton from "../componentes/CTAButton";
 import ModalNav from "../componentes/ModalNav";
-import ArrowRightIcon from "../icons/ArrowRightIcon";
-import ArrowLeftIcon from "../icons/ArrowLeftIcon";
 import FormContact from "../componentes/Form";
 
 const Adinfluence = () => {

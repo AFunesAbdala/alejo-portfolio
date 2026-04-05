@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowDecorative } from "./componentes/ArrowDecorative";
 import { CircleBorder } from "./componentes/CircleBorder";
 import CTAButton from "./componentes/CTAButton";
@@ -7,8 +10,12 @@ import Footer from "./componentes/Footer";
 import Navbar from "./componentes/Navbar";
 import ArrowUpIcon from "./icons/ArrowUpIcon";
 import HandIcon from "./icons/HandIcon";
+import HoverCircles from "./componentes/HoverCircles";
 
 export default function Home() {
+  const [isHoverProyect, setIsHoverProyect] = useState(false);
+  console.log(isHoverProyect);
+
   return (
     <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50">
       <Navbar></Navbar>
@@ -118,8 +125,30 @@ export default function Home() {
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           14
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2">
-          15
+        <div
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-200 hover:scale-105 hover:ring-1 hover:ring-white"
+          onMouseEnter={() => {
+            setIsHoverProyect(true);
+          }}
+          onMouseLeave={() => {
+            setIsHoverProyect(false);
+          }}
+        >
+          <a href="/adinfluence" className="h-full w-full">
+            <img
+              src="./img/adinfluence_portada.png"
+              className="w-full h-full object-cover rounded-xl"
+            ></img>
+          </a>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100">
+            <p className="text-center text-white text-sm">
+              Adinfluence
+              <br></br>
+              Website Redesign
+            </p>
+            <div className="pointer-events-none absolute -bottom-5/5 w-[200px] h-[200px] rounded-full bg-white blur-2xl"></div>
+          </div>
+          <HoverCircles number={15} status={isHoverProyect}></HoverCircles>
         </div>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           16
