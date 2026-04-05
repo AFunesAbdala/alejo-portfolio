@@ -125,7 +125,8 @@ export default function Home() {
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           14
         </div>
-        <div
+        <a
+          href="/adinfluence"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-200 hover:scale-105 hover:ring-1 hover:ring-white"
           onMouseEnter={() => {
             setIsHoverProyect(true);
@@ -134,13 +135,11 @@ export default function Home() {
             setIsHoverProyect(false);
           }}
         >
-          <a href="/adinfluence" className="h-full w-full">
-            <img
-              src="./img/adinfluence_portada.png"
-              className="w-full h-full object-cover rounded-xl"
-            ></img>
-          </a>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100">
+          <img
+            src="./img/adinfluence_portada.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
             <p className="text-center text-white text-sm">
               Adinfluence
               <br></br>
@@ -149,7 +148,7 @@ export default function Home() {
             <div className="pointer-events-none absolute -bottom-5/5 w-[200px] h-[200px] rounded-full bg-white blur-2xl"></div>
           </div>
           <HoverCircles number={15} status={isHoverProyect}></HoverCircles>
-        </div>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           16
         </div>
