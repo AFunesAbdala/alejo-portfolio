@@ -141,7 +141,7 @@ export default function Home() {
         >
           <img
             src="./img/apple_notes.png"
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl transform-gpu"
           ></img>
           <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
