@@ -127,7 +127,7 @@ export default function Home() {
         </div>
         <a
           href="/adinfluence"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl"
           onMouseEnter={() => {
             setIsHoverProyect(true);
           }}
@@ -140,7 +140,7 @@ export default function Home() {
             className="w-full h-full object-cover rounded-xl"
           ></img>
           <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
               Adinfluence
               <br></br>
               Website Redesign
