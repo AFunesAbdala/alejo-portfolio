@@ -14,7 +14,7 @@ import HoverCircles from "./componentes/HoverCircles";
 
 export default function Home() {
   const [isHoverProyect, setIsHoverProyect] = useState(false);
-  console.log(isHoverProyect);
+  const [numberProyect, setIsNumberProyect] = useState(0);
 
   return (
     <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50">
@@ -98,15 +98,61 @@ export default function Home() {
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           5
         </div>
-        <div className="h-full flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 row-span-2">
-          6
-        </div>
+        <a
+          href="/"
+          className="relative h-90 flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsHoverProyect(true);
+            setIsNumberProyect(6);
+          }}
+          onMouseLeave={() => {
+            setIsHoverProyect(false);
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/destiny_companion.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Destiny 2 Companion
+              <br></br>
+              App Redesign <span className="text-zinc-300">(Coming Soon)</span>
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-blue-500 blur-2xl"></div>
+          </div>
+          <HoverCircles number={6} status={numberProyect === 6}></HoverCircles>
+        </a>
         <div className="flex items-center justify-center bg-zinc-100 rounded-xl">
           7
         </div>
-        <div className="flex items-center justify-center bg-zinc-100 rounded-xl row-span-2">
-          8
-        </div>
+        <a
+          href="/adinfluence"
+          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl"
+          onMouseEnter={() => {
+            setIsHoverProyect(true);
+            setIsNumberProyect(8);
+          }}
+          onMouseLeave={() => {
+            setIsHoverProyect(false);
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/apple_notes.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Apple Notes
+              <br></br>
+              <span className="text-zinc-600">(Coming Soon)</span>
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-amber-200 blur-2xl"></div>
+          </div>
+          <HoverCircles number={8} status={numberProyect === 8}></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           9
         </div>
@@ -130,9 +176,11 @@ export default function Home() {
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl"
           onMouseEnter={() => {
             setIsHoverProyect(true);
+            setIsNumberProyect(15);
           }}
           onMouseLeave={() => {
             setIsHoverProyect(false);
+            setIsNumberProyect(null);
           }}
         >
           <img
@@ -145,9 +193,9 @@ export default function Home() {
               <br></br>
               Website Redesign
             </p>
-            <div className="pointer-events-none absolute -bottom-5/5 w-[200px] h-[200px] rounded-full bg-[#731DFF] blur-2xl"></div>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-purple-500 blur-2xl"></div>
           </div>
-          <HoverCircles number={15} status={isHoverProyect}></HoverCircles>
+          <HoverCircles number={15} status={numberProyect === 15}></HoverCircles>
         </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           16
