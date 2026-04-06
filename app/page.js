@@ -13,11 +13,10 @@ import HandIcon from "./icons/HandIcon";
 import HoverCircles from "./componentes/HoverCircles";
 
 export default function Home() {
-  const [isHoverProyect, setIsHoverProyect] = useState(false);
   const [numberProyect, setIsNumberProyect] = useState(0);
 
   return (
-    <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50">
+    <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50 overflow-hidden">
       <Navbar></Navbar>
       <div className="absolute w-full flex flex-col items-center -z-1 -top-18 inset-0">
         <EyeAnimation></EyeAnimation>
@@ -83,30 +82,70 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-6 gap-3 w-full max-w-360">
-        <div className="flex items-center justify-center bg-zinc-100 rounded-xl row-span-2">
-          1
-        </div>
+        <a
+          href="https://www.behance.net/gallery/153651021/NUBU-GAME-DEV"
+          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(1);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/nubu_game.png"
+            className="w-full h-full object-cover rounded-xl transform-gpu"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 rounded-xl hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4 text-white">
+              Nubu
+              <br></br>
+              Videogame Design
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-pink-500 blur-2xl"></div>
+          </div>
+          <HoverCircles number={8} status={numberProyect === 1}></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           2
         </div>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           3
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2">
-          4
-        </div>
+        <a
+          href="/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(4);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/student_app.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Student's App
+              <br></br>
+              Ux/Ui Design
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-emerald-500 blur-2xl"></div>
+          </div>
+          <HoverCircles number={4} status={numberProyect === 4}></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           5
         </div>
         <a
           href="/"
-          className="relative h-90 flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          className="relative h-full flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
-            setIsHoverProyect(true);
             setIsNumberProyect(6);
           }}
           onMouseLeave={() => {
-            setIsHoverProyect(false);
             setIsNumberProyect(null);
           }}
         >
@@ -114,7 +153,7 @@ export default function Home() {
             src="./img/destiny_companion.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Destiny 2 Companion
               <br></br>
@@ -128,14 +167,12 @@ export default function Home() {
           7
         </div>
         <a
-          href="/adinfluence"
-          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl"
+          href="/"
+          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
-            setIsHoverProyect(true);
             setIsNumberProyect(8);
           }}
           onMouseLeave={() => {
-            setIsHoverProyect(false);
             setIsNumberProyect(null);
           }}
         >
@@ -143,7 +180,7 @@ export default function Home() {
             src="./img/apple_notes.png"
             className="w-full h-full object-cover rounded-xl transform-gpu"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Apple Notes
               <br></br>
@@ -162,24 +199,70 @@ export default function Home() {
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           11
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          12
-        </div>
+        <a
+          href="/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(12);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/vallax_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Vallax
+              <br></br>
+              Branding
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-teal-700 blur-2xl"></div>
+          </div>
+          <HoverCircles
+            number={12}
+            status={numberProyect === 12}
+          ></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           13
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          14
-        </div>
+        <a
+          href="https://www.hinfluencer.cl/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(14);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/hi_influencer.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Hi Influencer
+              <br></br>
+              Landing Website
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-[#EEFF0B] blur-2xl"></div>
+          </div>
+          <HoverCircles
+            number={14}
+            status={numberProyect === 14}
+          ></HoverCircles>
+        </a>
         <a
           href="/adinfluence"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
-            setIsHoverProyect(true);
             setIsNumberProyect(15);
           }}
           onMouseLeave={() => {
-            setIsHoverProyect(false);
             setIsNumberProyect(null);
           }}
         >
@@ -187,7 +270,7 @@ export default function Home() {
             src="./img/adinfluence_portada.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Adinfluence
               <br></br>
@@ -195,14 +278,41 @@ export default function Home() {
             </p>
             <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-purple-500 blur-2xl"></div>
           </div>
-          <HoverCircles number={15} status={numberProyect === 15}></HoverCircles>
+          <HoverCircles
+            number={15}
+            status={numberProyect === 15}
+          ></HoverCircles>
         </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           16
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          17
-        </div>
+        <a
+          href="/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(17);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/sibolife_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Sibo Life
+              <br></br>
+              App Design
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-rose-300 blur-2xl"></div>
+          </div>
+          <HoverCircles
+            number={17}
+            status={numberProyect === 17}
+          ></HoverCircles>
+        </a>
       </div>
       <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
         <div className="grid grid-cols-2 gap-20 w-full max-w-283.5">
