@@ -106,9 +106,33 @@ export default function Home() {
           </div>
           <HoverCircles number={8} status={numberProyect === 1}></HoverCircles>
         </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          2
-        </div>
+        <a
+          href="/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(2);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/switch_wear.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Switch Wear
+              <br></br>
+              Branding
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-purple-700 blur-2xl"></div>
+          </div>
+          <HoverCircles
+            number={2}
+            status={numberProyect === 2}
+          ></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           3
         </div>
@@ -193,9 +217,33 @@ export default function Home() {
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           9
         </div>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          10
-        </div>
+        <a
+          href="/"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(10);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/motion.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Motion Design
+              <br></br>
+              Library
+            </p>
+            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-zinc-900 blur-2xl"></div>
+          </div>
+          <HoverCircles
+            number={10}
+            status={numberProyect === 10}
+          ></HoverCircles>
+        </a>
         <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
           11
         </div>
