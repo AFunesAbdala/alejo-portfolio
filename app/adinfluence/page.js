@@ -267,7 +267,7 @@ const Adinfluence = () => {
       </div>
       {isPopUp && (
         <div className="fixed top-0 left-0 z-50 w-full h-screen flex flex-col items-center justify-center backdrop-blur-lg">
-          <div className="w-120 p-4 rounded-2xl bg-white shadow-xl shadow-zinc-900/5 fade-in">
+          <div className="w-[550px] p-4 rounded-2xl bg-white shadow-xl shadow-zinc-900/5 fade-in">
             <button
               className="text-[#1100FF] tracking-tight cursor-pointer"
               onClick={() => {
