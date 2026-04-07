@@ -11,6 +11,7 @@ import FormContact from "../componentes/Form";
 
 const Adinfluence = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPopUp, setIsPopUp] = useState(false);
 
   return (
     <div className="relative z-0 flex flex-col items-center justify-center gap-20 bg-zinc-50">
@@ -247,18 +248,39 @@ const Adinfluence = () => {
             <p className="text-zinc-500 italic">Higher engagement quality.</p>
           </div>
           <div className="w-full h-[200px] flex flex-col items-start justify-end gap-2 p-10 rounded-3xl bg-white border border-zinc-100 shadow-xl shadow-zinc-200/30">
-            <p className="text-[28px] font-semibold">+52% views on case studies</p>
+            <p className="text-[28px] font-semibold">
+              +52% views on case studies
+            </p>
             <p className="text-zinc-500 italic">Content exploration.</p>
           </div>
           <div className="w-full h-[200px] flex flex-col items-start justify-end gap-2 p-10 rounded-3xl bg-white border border-zinc-100 shadow-xl shadow-zinc-200/30">
-            <p className="text-[28px] font-semibold">Automated lead flow through Make</p>
+            <p className="text-[28px] font-semibold">
+              Automated lead flow through Make
+            </p>
             <p className="text-zinc-500 italic">Integrated third-party apps.</p>
           </div>
         </div>
-        <p className="text-[13px] text-zinc-500">Data source: Google Search Console — comparing Jun–Aug 2024 vs Jun–Aug 2025.</p>
+        <p className="text-[13px] text-zinc-500">
+          Data source: Google Search Console — comparing Jun–Aug 2024 vs Jun–Aug
+          2025.
+        </p>
       </div>
-      <FormContact></FormContact>
-      <ModalNav></ModalNav>
+      {isPopUp && (
+        <div className="fixed top-0 left-0 z-50 w-full h-screen flex flex-col items-center justify-center backdrop-blur-lg">
+          <div className="w-120 p-4 rounded-2xl bg-white shadow-xl shadow-zinc-900/5 fade-in">
+            <button
+              className="text-[#1100FF] tracking-tight cursor-pointer"
+              onClick={() => {
+                setIsPopUp(false);
+              }}
+            >
+              Close
+            </button>
+            <FormContact></FormContact>
+          </div>
+        </div>
+      )}
+      <ModalNav proyect="adinfluence" linkToP={"https://www.adinfluence.cl/"} setIsPopUp={setIsPopUp}></ModalNav>
       <Footer></Footer>
     </div>
   );

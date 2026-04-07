@@ -11,9 +11,14 @@ import Navbar from "./componentes/Navbar";
 import ArrowUpIcon from "./icons/ArrowUpIcon";
 import HandIcon from "./icons/HandIcon";
 import HoverCircles from "./componentes/HoverCircles";
+import StarIcon from "./icons/StarIcon";
+import LoaderIcon from "./icons/Loader";
+import FormContact from "./componentes/Form";
 
 export default function Home() {
   const [numberProyect, setIsNumberProyect] = useState(0);
+  const [isNumberStar, setIsNumberStar] = useState(0);
+  const [isPopUp, setIsPopUp] = useState(false);
 
   return (
     <div className="relative z-0 flex flex-col items-center justify-center bg-zinc-50 overflow-hidden">
@@ -28,28 +33,31 @@ export default function Home() {
             <div className="w-full flex flex-row items-center justify-between">
               <div className="w-full flex flex-row gap-12.5">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/alejo-funes-abdala/"
+                  target="blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   LINKEDIN
                   <ArrowUpIcon></ArrowUpIcon>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.behance.net/alejofunesd4eb"
+                  target="blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   BEHANCE
                   <ArrowUpIcon></ArrowUpIcon>
                 </a>
                 <a
-                  href="#"
+                  href="https://drive.google.com/file/d/1LgEDw9CzfC4AMhb6PmepHioidiqNO8Pf/view?usp=drive_link"
+                  target="blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   READ.CV
                   <ArrowUpIcon></ArrowUpIcon>
                 </a>
                 <a
-                  href="#"
+                  href="mailto:alejofunes1@gmail.com"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   E-MAIL
@@ -61,7 +69,7 @@ export default function Home() {
                 className="w-12.5 h-12.5 object-cover"
               ></img>
             </div>
-            <h2 className="h-16 w-full flex items-center justify-center pb-2 text-[64px] font-semibold tracking-[-8%] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
+            <h2 className="w-full flex items-center justify-center py-4 text-[64px] font-semibold leading-12 -tracking-[6px] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
               Designing experiences for real people.
             </h2>
             <div className="flex flex-col gap-2 items-center text-center">
@@ -77,37 +85,31 @@ export default function Home() {
               I’m a product designer at Adinfluence. I create interfaces that
               work beautifully, driven by simplicity and purpose.
             </p>
-            <CTAButton text="say hello" type="contact"></CTAButton>
+            <CTAButton
+              text="say hello"
+              type="contact"
+              setIsPopUp={setIsPopUp}
+            ></CTAButton>
+            {isPopUp && (
+              <div className="fixed top-0 left-0 z-50 w-full h-screen flex flex-col items-center justify-center backdrop-blur-lg">
+                <div className="w-120 p-4 rounded-2xl bg-white shadow-xl shadow-zinc-100 fade-in">
+                  <button
+                    className="text-[#1100FF] tracking-tight cursor-pointer"
+                    onClick={() => {
+                      setIsPopUp(false);
+                    }}
+                  >
+                    Close
+                  </button>
+                  <FormContact></FormContact>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className="grid grid-cols-6 gap-3 w-full max-w-360">
         <a
-          href="https://www.behance.net/gallery/153651021/NUBU-GAME-DEV"
-          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(1);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/nubu_game.png"
-            className="w-full h-full object-cover rounded-xl transform-gpu"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 opacity-0 rounded-xl hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-sm leading-4 text-white">
-              Nubu
-              <br></br>
-              Videogame Design
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-pink-500 blur-2xl"></div>
-          </div>
-          <HoverCircles number={8} status={numberProyect === 1}></HoverCircles>
-        </a>
-        <a
-          href="/"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(2);
@@ -117,193 +119,26 @@ export default function Home() {
           }}
         >
           <img
-            src="./img/switch_wear.png"
+            src="./img/switchwear_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm leading-4">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
               Switch Wear
               <br></br>
               Branding
             </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-purple-700 blur-2xl"></div>
           </div>
-          <HoverCircles
-            number={2}
-            status={numberProyect === 2}
-          ></HoverCircles>
+          <HoverCircles number={2} status={numberProyect === 2}></HoverCircles>
         </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          3
-        </div>
-        <a
-          href="/"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(4);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/student_app.png"
-            className="w-full h-full object-cover rounded-xl"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-sm leading-4">
-              Student's App
-              <br></br>
-              Ux/Ui Design
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
             </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-emerald-500 blur-2xl"></div>
           </div>
-          <HoverCircles number={4} status={numberProyect === 4}></HoverCircles>
-        </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          5
         </div>
-        <a
-          href="/"
-          className="relative h-full flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(6);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/destiny_companion.png"
-            className="w-full h-full object-cover rounded-xl"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm leading-4">
-              Destiny 2 Companion
-              <br></br>
-              App Redesign <span className="text-zinc-300">(Coming Soon)</span>
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-blue-500 blur-2xl"></div>
-          </div>
-          <HoverCircles number={6} status={numberProyect === 6}></HoverCircles>
-        </a>
-        <div className="flex items-center justify-center bg-zinc-100 rounded-xl">
-          7
-        </div>
-        <a
-          href="/"
-          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(8);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/apple_notes.png"
-            className="w-full h-full object-cover rounded-xl transform-gpu"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-sm leading-4">
-              Apple Notes
-              <br></br>
-              <span className="text-zinc-600">(Coming Soon)</span>
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-amber-200 blur-2xl"></div>
-          </div>
-          <HoverCircles number={8} status={numberProyect === 8}></HoverCircles>
-        </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          9
-        </div>
-        <a
-          href="/"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(10);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/motion.png"
-            className="w-full h-full object-cover rounded-xl"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm leading-4">
-              Motion Design
-              <br></br>
-              Library
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-zinc-900 blur-2xl"></div>
-          </div>
-          <HoverCircles
-            number={10}
-            status={numberProyect === 10}
-          ></HoverCircles>
-        </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          11
-        </div>
-        <a
-          href="/"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(12);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/vallax_logo.png"
-            className="w-full h-full object-cover rounded-xl"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm leading-4">
-              Vallax
-              <br></br>
-              Branding
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-teal-700 blur-2xl"></div>
-          </div>
-          <HoverCircles
-            number={12}
-            status={numberProyect === 12}
-          ></HoverCircles>
-        </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          13
-        </div>
-        <a
-          href="https://www.hinfluencer.cl/"
-          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
-          onMouseEnter={() => {
-            setIsNumberProyect(14);
-          }}
-          onMouseLeave={() => {
-            setIsNumberProyect(null);
-          }}
-        >
-          <img
-            src="./img/hi_influencer.png"
-            className="w-full h-full object-cover rounded-xl"
-          ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
-            <p className="relative z-10 text-center text-white text-sm leading-4">
-              Hi Influencer
-              <br></br>
-              Landing Website
-            </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-[#EEFF0B] blur-2xl"></div>
-          </div>
-          <HoverCircles
-            number={14}
-            status={numberProyect === 14}
-          ></HoverCircles>
-        </a>
         <a
           href="/adinfluence"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
@@ -315,27 +150,57 @@ export default function Home() {
           }}
         >
           <img
-            src="./img/adinfluence_portada.png"
+            src="./img/adinfluence_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Adinfluence
               <br></br>
               Website Redesign
             </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-purple-500 blur-2xl"></div>
           </div>
           <HoverCircles
             number={15}
             status={numberProyect === 15}
           ></HoverCircles>
         </a>
-        <div className="h-45 flex items-center justify-center bg-zinc-100 rounded-xl">
-          16
+        <a
+          href="https://www.hinfluencer.cl/"
+          target="blank"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(14);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/hinfluencer_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Hi Influencer
+              <br></br>
+              Landing Website
+            </p>
+          </div>
+          <HoverCircles
+            number={14}
+            status={numberProyect === 14}
+          ></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
+            </p>
+          </div>
         </div>
         <a
-          href="/"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(17);
@@ -348,19 +213,205 @@ export default function Home() {
             src="./img/sibolife_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Sibo Life
               <br></br>
               App Design
             </p>
-            <div className="pointer-events-none absolute -bottom-[180px] w-[200px] h-[200px] rounded-full bg-rose-300 blur-2xl"></div>
           </div>
           <HoverCircles
             number={17}
             status={numberProyect === 17}
           ></HoverCircles>
         </a>
+        <a
+          className="relative h-full flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(6);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/destiny_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Destiny 2 Companion
+              <br></br>
+              App Redesign <span className="text-zinc-300">(Coming Soon)</span>
+            </p>
+          </div>
+          <HoverCircles number={6} status={numberProyect === 6}></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
+            </p>
+          </div>
+        </div>
+        <a
+          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(8);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/apple_notes.png"
+            className="w-full h-full object-cover rounded-xl transform-gpu"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Apple Notes
+              <br></br>
+              <span className="text-zinc-600">(Coming Soon)</span>
+            </p>
+          </div>
+          <HoverCircles number={8} status={numberProyect === 8}></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1WZWVJK4N7xr-lO1dGYWr3ol3FD-qOfcB/view?usp=sharing"
+          target="blank"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(12);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/vallax_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-white text-sm leading-4">
+              Vallax
+              <br></br>
+              Branding
+            </p>
+          </div>
+          <HoverCircles
+            number={12}
+            status={numberProyect === 12}
+          ></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm text-zinc-400 leading-4">
+              Our Proyect
+              <br></br>
+              Here 😉
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://www.behance.net/gallery/153651021/NUBU-GAME-DEV"
+          target="blank"
+          className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(1);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/nubu_logo.png"
+            className="w-full h-full object-cover rounded-xl transform-gpu"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 opacity-0 rounded-xl hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4 text-white">
+              Nubu
+              <br></br>
+              Videogame Design
+            </p>
+          </div>
+          <HoverCircles number={8} status={numberProyect === 1}></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://www.behance.net/alejofunesd4eb"
+          target="blank"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(10);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/motion.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Motion Design
+              <br></br>
+              Library
+            </p>
+          </div>
+          <HoverCircles
+            number={10}
+            status={numberProyect === 10}
+          ></HoverCircles>
+        </a>
+        <a
+          href="https://www.figma.com/proto/WB3FDh2u9yAr002KkCS3EQ/UNLAR-%3E-SAE?node-id=8-330&page-id=0%3A1&starting-point-node-id=8%3A330&t=taxygGzBX8YM5I0P-1"
+          target="blank"
+          className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
+          onMouseEnter={() => {
+            setIsNumberProyect(4);
+          }}
+          onMouseLeave={() => {
+            setIsNumberProyect(null);
+          }}
+        >
+          <img
+            src="./img/students_app_logo.png"
+            className="w-full h-full object-cover rounded-xl"
+          ></img>
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <p className="relative z-10 text-center text-sm leading-4">
+              Student's App
+              <br></br>
+              Ux/Ui Design
+            </p>
+          </div>
+          <HoverCircles number={4} status={numberProyect === 4}></HoverCircles>
+        </a>
+        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+            <LoaderIcon />
+            <p className="text-center text-sm text-zinc-400 leading-4">
+              Future Proyect
+            </p>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
         <div className="grid grid-cols-2 gap-20 w-full max-w-283.5">
@@ -370,39 +421,103 @@ export default function Home() {
             </h2>
             <div className="w-full flex flex-row gap-12">
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(1);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>DISCOVERY</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 1} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(2);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>USER FLOWS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 2} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(3);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>USER TESTING</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 3} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(4);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>COMPETITOR ANALYSIS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 4} />
                 </div>
               </div>
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(5);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>RESEARCH</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 5} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(6);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>BRAND IDENTITY</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 6} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(7);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>USABILITY TESTING</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 7} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(8);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>UX/UI DESIGN</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 8} />
                 </div>
               </div>
             </div>
@@ -413,31 +528,79 @@ export default function Home() {
             </h2>
             <div className="w-full flex flex-row gap-12">
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(9);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>BRAND IDENTITY</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 9} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(10);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>BRAND KIT</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 10} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(11);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>MOTION & 3D</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 11} />
                 </div>
               </div>
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(12);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>BRAND POSITIONING</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 12} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(13);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>BRAND TONE OF VOICE</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 13} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(14);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>CREATIVE DIRECTION</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 14} />
                 </div>
               </div>
             </div>
@@ -448,35 +611,91 @@ export default function Home() {
             </h2>
             <div className="w-full flex flex-row gap-12">
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(15);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>NATIVE IOS APPS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 15} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(16);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>NATIVE ANDROID APPS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 16} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(17);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>WEB APPS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 17} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(18);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>DESIGN SYSTEMS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 18} />
                 </div>
               </div>
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(19);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>PROTOTYPING</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 19} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(20);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>LANDING PAGES</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 20} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(21);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>INTERACTION DESIGNS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 21} />
                 </div>
               </div>
             </div>
@@ -487,39 +706,103 @@ export default function Home() {
             </h2>
             <div className="w-full flex flex-row gap-12">
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(22);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>NO-CODE 3D</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 22} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(23);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>WEBFLOW</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 23} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(24);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>FRAMER</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 24} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(25);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>MOTION</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 25} />
                 </div>
               </div>
               <div className="w-full flex flex-col">
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(26);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>HTML / CSS</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 26} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(27);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>NEXT.JS / REACT NATIVE</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 27} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(28);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>JAVASCRIPT / TYPESCRIPT</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 28} />
                 </div>
-                <div className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400">
+                <div
+                  className="w-full flex flex-row items-center justify-between py-3.5 border-b border-b-zinc-400 duration-200 hover:text-purple-600 hover:border-purple-600"
+                  onMouseEnter={() => {
+                    setIsNumberStar(29);
+                  }}
+                  onMouseLeave={() => {
+                    setIsNumberStar(0);
+                  }}
+                >
                   <p>API REST</p>
-                  <p>A</p>
+                  <StarIcon animation={isNumberStar === 29} />
                 </div>
               </div>
             </div>

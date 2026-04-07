@@ -24,7 +24,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
-  line-height: 24px;
 }
 
 @keyframes scroll {
@@ -61,6 +60,39 @@ body {
   to { 
     transform: rotate(0deg); 
   }
+}
+
+@keyframes pulse-ping {
+  from { 
+    width: 1px; 
+    height: 1px;
+    opacity: 100%;
+  }
+  to { 
+    width: 80px; 
+    height: 80px;
+    opacity: 0%;
+  }
+}
+
+@keyframes fade-in {
+  from { 
+    transform: translateY(24px);
+    opacity: 0%;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.fade-in {
+  animation: fade-in .4s ease-in-out;
+}
+
+
+.pulse-ping {
+  animation: pulse-ping 1.5s ease-in-out infinite;
 }
 
 .animate-rotate {
