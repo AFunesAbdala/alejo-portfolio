@@ -34,7 +34,7 @@ export default function Home() {
               <div className="w-full flex flex-row gap-12.5">
                 <a
                   href="https://www.linkedin.com/in/alejo-funes-abdala/"
-                  target="blank"
+                  target="_blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   LINKEDIN
@@ -42,7 +42,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://www.behance.net/alejofunesd4eb"
-                  target="blank"
+                  target="_blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   BEHANCE
@@ -50,7 +50,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://drive.google.com/file/d/1LgEDw9CzfC4AMhb6PmepHioidiqNO8Pf/view?usp=drive_link"
-                  target="blank"
+                  target="_blank"
                   className="flex flex-row items-center gap-2 text-sm"
                 >
                   READ.CV
@@ -167,7 +167,7 @@ export default function Home() {
         </a>
         <a
           href="https://www.hinfluencer.cl/"
-          target="blank"
+          target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(14);
@@ -287,7 +287,7 @@ export default function Home() {
         </div>
         <a
           href="https://drive.google.com/file/d/1WZWVJK4N7xr-lO1dGYWr3ol3FD-qOfcB/view?usp=sharing"
-          target="blank"
+          target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(12);
@@ -323,7 +323,7 @@ export default function Home() {
         </div>
         <a
           href="https://www.behance.net/gallery/153651021/NUBU-GAME-DEV"
-          target="blank"
+          target="_blank"
           className="relative flex items-center justify-center bg-zinc-100 rounded-xl row-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(1);
@@ -355,7 +355,7 @@ export default function Home() {
         </div>
         <a
           href="https://www.behance.net/alejofunesd4eb"
-          target="blank"
+          target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(10);
@@ -382,7 +382,7 @@ export default function Home() {
         </a>
         <a
           href="https://www.figma.com/proto/WB3FDh2u9yAr002KkCS3EQ/UNLAR-%3E-SAE?node-id=8-330&page-id=0%3A1&starting-point-node-id=8%3A330&t=taxygGzBX8YM5I0P-1"
-          target="blank"
+          target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl col-span-2 duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(4);
