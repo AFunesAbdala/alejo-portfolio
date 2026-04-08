@@ -87,7 +87,11 @@ const Adinfluence = () => {
                 transform: `translateX(-${currentIndex * (836 + 48)}px)`,
               }}
             >
-              <div className="relative shrink-0 w-[836px] h-full bg-zinc-100 rounded-3xl border border-zinc-200">
+              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+                <img
+                  src="../img/hero_mockup.png"
+                  className="absolute top-16 max-w-[690px]"
+                ></img>
                 <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Hero
@@ -98,7 +102,11 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full bg-zinc-100 rounded-3xl border border-zinc-200">
+              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+                <img
+                  src="../img/conversion_mockup.png"
+                  className="absolute top-16 max-w-[410px]"
+                ></img>
                 <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Conversion
@@ -109,7 +117,11 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full bg-zinc-100 rounded-3xl border border-zinc-200">
+              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+                <img
+                  src="../img/cases_mockup.png"
+                  className="absolute top-16 max-w-[410px]"
+                ></img>
                 <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Case Studies
@@ -119,7 +131,11 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full bg-zinc-100 rounded-3xl border border-zinc-200">
+              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+                <img
+                  src="../img/services_mockup.png"
+                  className="absolute top-16 right-4 max-w-[690px]"
+                ></img>
                 <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Services
@@ -130,8 +146,12 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full bg-zinc-100 rounded-3xl border border-zinc-200">
-                <h3 className="absolute left-10 top-11 text-[28px] font-semibold tracking-tighter">
+              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+                <img
+                  src="../img/visual_mockup.png"
+                  className="absolute top-16 -right-20 max-w-[690px]"
+                ></img>
+                <h3 className="absolute left-10 top-16 text-[28px] font-semibold tracking-tighter">
                   Visual Elements
                 </h3>
                 <div className="absolute left-10 bottom-11 flex flex-col gap-2">
@@ -221,10 +241,50 @@ const Adinfluence = () => {
         <h2 className="h-16 w-full flex items-center text-[56px] font-semibold tracking-[-8%] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
           Design that builds trust
         </h2>
-        <div className="w-full h-[410px] bg-[#040011] rounded-3xl"></div>
-        <div className="w-full h-[410px] bg-[#040011] rounded-3xl"></div>
-        <div className="w-full h-[410px] bg-[#040011] rounded-3xl"></div>
-        <div className="w-full h-[410px] bg-[#040011] rounded-3xl"></div>
+        <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
+          <img
+            src="../img/new_hero_mockup.png"
+            className="absolute top-10 max-w-[540px]"
+          ></img>
+          <p className="w-full text-left text-[28px] font-semibold tracking-tighter text-white">
+            Strong Presence
+          </p>
+        </div>
+        <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
+          <img
+            src="../img/new_visual_mockup.png"
+            className="absolute -left-80 top-10 max-w-[720px]"
+          ></img>
+          <img
+            src="../img/new_visual2_mockup.png"
+            className="absolute -right-80 top-10 max-w-[720px]"
+          ></img>
+          <p className="text-[28px] font-semibold tracking-tighter text-white">
+            Modern UI
+          </p>
+        </div>
+        <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
+          <img
+            src="../img/new_services_mockup.png"
+            className="absolute left-30 top-22 max-w-[610px]"
+          ></img>
+          <img
+            src="../img/new_services2_mockup.png"
+            className="absolute right-30 top-40 max-w-[500px]"
+          ></img>
+          <p className="text-[28px] font-semibold tracking-tighter text-white">
+            Simple Paths
+          </p>
+        </div>
+        <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
+          <img
+            src="../img/new_conversion_mockup.png"
+            className="absolute top-10 max-w-[700px]"
+          ></img>
+          <p className="w-full text-left text-[28px] font-semibold tracking-tighter text-white">
+            Inviting Flow
+          </p>
+        </div>
       </div>
       <div className="flex flex-col justify-center gap-10 w-full max-w-360 px-40">
         <h2 className="h-16 w-full flex items-center text-[56px] font-semibold tracking-[-8%] text-zinc-800">
@@ -280,7 +340,11 @@ const Adinfluence = () => {
           </div>
         </div>
       )}
-      <ModalNav proyect="adinfluence" linkToP={"https://www.adinfluence.cl/"} setIsPopUp={setIsPopUp}></ModalNav>
+      <ModalNav
+        proyect="adinfluence"
+        linkToP={"https://www.adinfluence.cl/"}
+        setIsPopUp={setIsPopUp}
+      ></ModalNav>
       <Footer></Footer>
     </div>
   );

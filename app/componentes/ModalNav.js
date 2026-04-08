@@ -18,7 +18,7 @@ function ModalNav({ proyect, linkToP, setIsPopUp }) {
           className="h-[24px] w-[24px] object-cover"
         ></img>
       </div>
-      <CTAButton text="Visit Site" type="secondary" linkTo={linkToP} />
+      <CTAButton text="Visit Site" type="secondary" linkTo={linkToP} blank={true}/>
       <CTAButton text="Let's talk" type="primary" setIsPopUp={setIsPopUp} />
       <button
         className="h-[47px] w-[47px] flex items-center justify-center bg-white rounded-full cursor-pointer"
