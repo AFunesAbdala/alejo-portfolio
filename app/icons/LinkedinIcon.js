@@ -6,7 +6,7 @@ export default function LinkedinIcon({ width = "9", height = "9" }) {
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill="#18181b"
+      fill="#27272a"
       viewBox="0 0 24 24"
     >
       <path

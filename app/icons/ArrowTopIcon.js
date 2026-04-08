@@ -6,7 +6,7 @@ export default function ArrowTopIcon({ width = "9", height = "9" }) {
       height={height}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#18181b"
+      stroke="#27272a"
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"

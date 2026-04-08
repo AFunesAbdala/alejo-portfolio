@@ -77,7 +77,7 @@ export default function Navbar() {
         <a
           href="https://drive.google.com/file/d/1LgEDw9CzfC4AMhb6PmepHioidiqNO8Pf/view?usp=drive_link"
           target="_blank"
-          className="flex flex-row items-center justify-center p-4 text-sm font-bold bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
+          className="flex flex-row items-center justify-center p-4 text-sm text-zinc-900 font-bold bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
         >
           CV
         </a>
