@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../componentes/Navbar";
 import Footer from "../componentes/Footer";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
@@ -8,21 +8,32 @@ import DecorativeFrame from "../componentes/DecorativeFrame";
 import CTAButton from "../componentes/CTAButton";
 import ModalNav from "../componentes/ModalNav";
 import FormContact from "../componentes/Form";
+import Link from "next/link";
 
 const Adinfluence = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPopUp, setIsPopUp] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div className="relative z-0 flex flex-col items-center justify-center gap-20 bg-zinc-50">
       <Navbar></Navbar>
       <DecorativeFrame></DecorativeFrame>
-      <div className="flex flex-col items-center justify-center w-full max-w-360 pt-40">
+      <div className="flex flex-col items-center justify-center w-full sm:max-w-360 pt-40 px-2 sm:px-0">
         <div className="flex flex-col gap-20 w-full max-w-280">
-          <div className="flex flex-col items-center gap-25">
-            <div className="w-full flex flex-row items-center justify-between">
+          <div className="flex flex-col items-center sm:gap-25 gap-20">
+            <div className="hidden w-full sm:flex flex-row items-center justify-between">
               <div className="w-full flex flex-row items-center gap-12.5">
-                <CTAButton text="go back" type="secondary"></CTAButton>
+                <div className="hidden sm:block">
+                  <CTAButton text="go back" type="secondary"></CTAButton>
+                </div>
                 <div className="flex flex-row items-center gap-8 text-sm">
                   <p className="text-zinc-600">Projects</p>
                   <p>{">"}</p>
@@ -35,10 +46,10 @@ const Adinfluence = () => {
               ></img>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <h2 className="h-21 w-full flex items-center justify-center text-[80px] font-semibold tracking-[-8%] bg-linear-to-b from-[#18181B] via-[#9A95A4] to-[#F0E8FF] bg-clip-text text-transparent">
+              <h2 className="w-full flex items-center sm:justify-center text-left py-4 text-[64px] sm:text-[80px] font-semibold leading-12 -tracking-[6px] bg-linear-to-b from-[#18181B] via-[#9A95A4] to-[#F0E8FF] bg-clip-text text-transparent">
                 Adinfluence
               </h2>
-              <h2 className="h-21 w-full flex items-center justify-center pb-2 text-[80px] font-semibold tracking-[-8%] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
+              <h2 className="w-full flex items-center sm:justify-center text-left py-4 text-[64px] sm:text-[80px] font-semibold leading-12 -tracking-[6px] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
                 Website Redesign
               </h2>
               <h2 className="italic text-zinc-500 mt-6">
@@ -46,7 +57,7 @@ const Adinfluence = () => {
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-20 w-full max-w-280">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 w-full max-w-280">
             <div className="w-full flex flex-col gap-25">
               <div className="w-full flex flex-col gap-2">
                 <p className="font-semibold text-lg">Who they are?</p>
@@ -75,24 +86,26 @@ const Adinfluence = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-10 w-full max-w-360 px-40 overflow-hidden">
-        <h2 className="h-16 w-full flex items-center text-[56px] font-semibold tracking-[-8%] bg-linear-to-b from-[#18181B] via-[#9A95A4] to-[#F0E8FF] bg-clip-text text-transparent">
+      <div className="flex flex-col justify-center gap-10 w-full sm:max-w-360 sm:px-40 px-2 mt-5 sm:mt-0 overflow-hidden">
+        <h2 className="w-full flex items-center text-[56px] py-4 font-semibold leading-10 -tracking-[4px] bg-linear-to-b from-[#18181B] via-[#9A95A4] to-[#F0E8FF] bg-clip-text text-transparent">
           Before the redesign
         </h2>
-        <div className="flex flex-col justify-center w-full max-w-[836px] gap-8">
+        <div className="flex flex-col justify-center w-full sm:max-w-[836px] gap-8 overflow-hidden sm:overflow-visible">
           <div className="w-full h-[410px]">
             <div
-              className="h-full flex flex-row gap-12 flex-nowrap transition duration-300"
+              className="h-full flex flex-row sm:gap-12 flex-nowrap transition duration-300"
               style={{
-                transform: `translateX(-${currentIndex * (836 + 48)}px)`,
+                transform: isMobile
+                  ? `translateX(-${currentIndex * 100}%)` // Mobile: 100%
+                  : `translateX(-${currentIndex * (836 + 48)}px)`, // Desktop: Hardcodeado
               }}
             >
-              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+              <div className="relative w-full shrink-0 sm:w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
                 <img
                   src="../img/hero_mockup.png"
-                  className="absolute top-16 max-w-[690px]"
+                  className="absolute sm:top-16 top-10 sm:max-w-[690px] max-w-[340px]"
                 ></img>
-                <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
+                <div className="w-full absolute sm:bottom-10 bottom-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:px-10 px-5">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Hero
                   </h3>
@@ -102,12 +115,12 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+              <div className="relative w-full shrink-0 sm:w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
                 <img
                   src="../img/conversion_mockup.png"
-                  className="absolute top-16 max-w-[410px]"
+                  className="absolute sm:top-16 top-10 sm:max-w-[410px] max-w-[340px]"
                 ></img>
-                <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
+                <div className="w-full absolute sm:bottom-10 bottom-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:px-10 px-5">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Conversion
                   </h3>
@@ -117,12 +130,12 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+              <div className="relative w-full shrink-0 sm:w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
                 <img
                   src="../img/cases_mockup.png"
-                  className="absolute top-16 max-w-[410px]"
+                  className="absolute sm:top-16 top-10 sm:max-w-[410px] max-w-[340px]"
                 ></img>
-                <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
+                <div className="w-full absolute sm:bottom-10 bottom-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:px-10 px-5">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Case Studies
                   </h3>
@@ -131,12 +144,12 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+              <div className="relative w-full shrink-0 sm:w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
                 <img
                   src="../img/services_mockup.png"
-                  className="absolute top-16 right-4 max-w-[690px]"
+                  className="absolute sm:top-16 top-10 sm:right-4 sm:max-w-[690px] max-w-[340px]"
                 ></img>
-                <div className="w-full absolute bottom-11 flex flex-row items-center justify-between px-10">
+                <div className="w-full absolute sm:bottom-10 bottom-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:px-10 px-5">
                   <h3 className="text-[28px] font-semibold tracking-tighter">
                     Services
                   </h3>
@@ -146,15 +159,17 @@ const Adinfluence = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative shrink-0 w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
+              <div className="relative w-full shrink-0 sm:w-[836px] h-full flex justify-center bg-zinc-100 rounded-3xl border border-zinc-200 overflow-hidden">
                 <img
                   src="../img/visual_mockup.png"
-                  className="absolute top-16 -right-20 max-w-[690px]"
+                  className="absolute sm:top-16 top-10 -right-20 sm:max-w-[690px] max-w-[340px]"
                 ></img>
-                <h3 className="absolute left-10 top-16 text-[28px] font-semibold tracking-tighter">
-                  Visual Elements
+                <h3 className="absolute sm:left-10 left-5 sm:top-16 top-10 text-[28px] font-semibold leading-6 tracking-tighter">
+                  Visual&nbsp;
+                  {isMobile && <br></br>}
+                  Elements
                 </h3>
-                <div className="absolute left-10 bottom-11 flex flex-col gap-2">
+                <div className="w-full absolute sm:bottom-10 bottom-5 flex flex-col gap-2 sm:px-10 px-5">
                   <p className="w-fit text-sm text-zinc-500 bg-white py-1.5 px-2.5 rounded-lg">
                     Poor color balance, low contrast, inconsistent spacing, and
                     uneven typography sizes.
@@ -191,9 +206,9 @@ const Adinfluence = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-full max-w-360">
+      <div className="flex flex-col items-center justify-center w-full sm:max-w-360 sm:px-0 px-2 mt-10 sm:mt-0">
         <div className="flex flex-col gap-20 w-full max-w-280">
-          <div className="grid grid-cols-2 gap-20 w-full max-w-280">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 w-full max-w-280">
             <div className="w-full flex flex-col gap-25">
               <div className="w-full flex flex-col gap-2">
                 <p className="font-semibold text-lg">How I approached it?</p>
@@ -237,27 +252,27 @@ const Adinfluence = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-10 w-full max-w-360 px-40">
-        <h2 className="h-16 w-full flex items-center text-[56px] font-semibold tracking-[-8%] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
+      <div className="flex flex-col justify-center gap-10 w-full max-w-360 sm:px-40 px-2 mt-5 sm:mt-0">
+        <h2 className="w-full flex items-center text-[56px] py-4 font-semibold leading-10 -tracking-[4px] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
           Design that builds trust
         </h2>
         <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
           <img
             src="../img/new_hero_mockup.png"
-            className="absolute top-10 max-w-[540px]"
+            className="absolute sm:top-10 top-34 sm:max-w-[540px] max-w-[340px]"
           ></img>
-          <p className="w-full text-left text-[28px] font-semibold tracking-tighter text-white">
+          <p className="w-full text-center sm:text-left text-[28px] font-semibold tracking-tighter text-white">
             Strong Presence
           </p>
         </div>
         <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
           <img
             src="../img/new_visual_mockup.png"
-            className="absolute -left-80 top-10 max-w-[720px]"
+            className="absolute sm:-left-80 -left-40 sm:top-10 top-34 sm:max-w-[720px] max-w-[340px]"
           ></img>
           <img
             src="../img/new_visual2_mockup.png"
-            className="absolute -right-80 top-10 max-w-[720px]"
+            className="absolute sm:-right-80 -right-40 sm:top-10 top-34 sm:max-w-[720px] max-w-[340px]"
           ></img>
           <p className="text-[28px] font-semibold tracking-tighter text-white">
             Modern UI
@@ -266,11 +281,11 @@ const Adinfluence = () => {
         <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
           <img
             src="../img/new_services_mockup.png"
-            className="absolute left-30 top-22 max-w-[610px]"
+            className="absolute sm:left-30 sm:top-22 top-30 -left-28 sm:max-w-[610px] max-w-[380px]"
           ></img>
           <img
             src="../img/new_services2_mockup.png"
-            className="absolute right-30 top-40 max-w-[500px]"
+            className="absolute sm:right-30 sm:top-40 top-40 -right-28 sm:max-w-[500px] max-w-[340px]"
           ></img>
           <p className="text-[28px] font-semibold tracking-tighter text-white">
             Simple Paths
@@ -279,18 +294,20 @@ const Adinfluence = () => {
         <div className="relative w-full h-[410px] flex justify-center p-10 bg-[#040011] rounded-3xl overflow-hidden">
           <img
             src="../img/new_conversion_mockup.png"
-            className="absolute top-10 max-w-[700px]"
+            className="absolute sm:top-10 top-34 sm:max-w-[700px] max-w-[340px]"
           ></img>
-          <p className="w-full text-left text-[28px] font-semibold tracking-tighter text-white">
+          <p className="w-full text-center sm:text-left text-[28px] font-semibold tracking-tighter text-white">
             Inviting Flow
           </p>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-10 w-full max-w-360 px-40">
-        <h2 className="h-16 w-full flex items-center text-[56px] font-semibold tracking-[-8%] text-zinc-800">
-          Measured impact
+      <div className="flex flex-col justify-center gap-10 w-full max-w-360 sm:px-40 px-2 mt-10 sm:mt-0">
+        <h2 className="h-16 w-full flex items-center text-[56px] py-4 font-semibold leading-10 -tracking-[4px] text-zinc-800">
+          Measured&nbsp;
+          {isMobile && <br></br>}
+          impact
         </h2>
-        <div className="w-full grid grid-cols-3 gap-9">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-9">
           <div className="w-full h-[200px] flex flex-col items-start justify-end gap-2 p-10 rounded-3xl bg-white border border-zinc-100 shadow-xl shadow-zinc-200/30">
             <p className="text-[28px] font-semibold">+155% clicks.</p>
             <p className="text-zinc-500 italic">Traffic increase.</p>

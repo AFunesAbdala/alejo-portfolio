@@ -2,7 +2,7 @@ import React from "react";
 
 function FormContact() {
   return (
-    <div className="w-full max-w-[550px] flex flex-col items-center justify-center gap-10">
+    <div className="w-full sm:max-w-[550px] flex flex-col items-center justify-center gap-10">
       <h2 className="h-16 flex items-center text-[56px] font-semibold tracking-[-8%] bg-linear-to-b from-[#1100FF] via-[#897DFF] to-[#F0E8FF] bg-clip-text text-transparent">
         Let’s talk!
       </h2>

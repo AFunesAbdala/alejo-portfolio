@@ -91,8 +91,8 @@ export default function Home() {
               setIsPopUp={setIsPopUp}
             ></CTAButton>
             {isPopUp && (
-              <div className="fixed top-0 left-0 z-50 w-full h-screen flex flex-col items-center justify-center backdrop-blur-lg">
-                <div className="w-[550px] p-4 rounded-2xl bg-white shadow-xl shadow-zinc-100 fade-in">
+              <div className="fixed top-0 left-0 z-50 w-full h-screen flex flex-col items-center justify-center backdrop-blur-lg px-2 sm:px-0">
+                <div className="w-full sm:w-[550px] p-4 rounded-2xl bg-white shadow-xl shadow-zinc-100 fade-in">
                   <button
                     className="text-[#1100FF] tracking-tight cursor-pointer"
                     onClick={() => {
