@@ -27,10 +27,10 @@ export default function Home() {
         <EyeAnimation></EyeAnimation>
       </div>
       <DecorativeFrame></DecorativeFrame>
-      <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
-        <div className="flex flex-col gap-52 w-full max-w-283.5">
+      <div className="flex flex-col items-center justify-center w-full sm:max-w-360 sm:p-40 pt-40 px-2">
+        <div className="flex flex-col gap-52 w-full sm:max-w-283.5">
           <div className="flex flex-col items-center gap-25">
-            <div className="w-full flex flex-row items-center justify-between">
+            <div className="hidden w-full sm:flex flex-row items-center justify-between">
               <div className="w-full flex flex-row gap-12.5">
                 <a
                   href="https://www.linkedin.com/in/alejo-funes-abdala/"

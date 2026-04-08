@@ -4,6 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LocationIcon from "../icons/LocationIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
+import LinkedinIcon from "../icons/LinkedinIcon";
+import BehanceIcon from "../icons/BehanceIcon";
+import MailToIcon from "../icons/MailToIcon";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,10 +18,10 @@ export default function Navbar() {
           Working from <b>Córdoba, Argentina</b>
         </div>
         {pathname != "/" && (
-          <div className="flex gap-12.5 grow">
+          <div className="hidden sm:flex gap-12.5 grow">
             <a
               href="https://www.linkedin.com/in/alejo-funes-abdala/"
-              target="blank"
+              target="_blank"
               className="flex flex-row items-center gap-2 text-xs"
             >
               LINKEDIN
@@ -49,9 +52,41 @@ export default function Navbar() {
             </a>
           </div>
         )}
+
         <div className="text-sm flex flex-col sm:block sm:text-right text-center text-zinc-900">
-          <b>ALEJO FUNES ABDALA</b> <span className="hidden sm:inline">-</span> PRODUCT & MULTIMEDIA DESIGNER
+          <b>ALEJO FUNES ABDALA</b> <span className="hidden sm:inline">-</span>{" "}
+          PRODUCT & MULTIMEDIA DESIGNER
         </div>
+      </div>
+
+      <div className="sm:hidden fixed flex flex-col gap-2 right-2 top-1/2 -translate-y-1/2">
+        <a
+          href="https://www.linkedin.com/in/alejo-funes-abdala/"
+          target="_blank"
+          className="flex flex-row items-center justify-center p-4 bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
+        >
+          <LinkedinIcon width="20" height="20"></LinkedinIcon>
+        </a>
+        <a
+          href="https://www.behance.net/alejofunesd4eb"
+          target="_blank"
+          className="flex flex-row items-center justify-center p-4 bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
+        >
+          <BehanceIcon width="20" height="20"></BehanceIcon>
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1LgEDw9CzfC4AMhb6PmepHioidiqNO8Pf/view?usp=drive_link"
+          target="_blank"
+          className="flex flex-row items-center justify-center p-4 text-sm font-bold bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
+        >
+          CV
+        </a>
+        <a
+          href="mailto:alejofunes1@gmail.com"
+          className="flex flex-row items-center justify-center p-4 bg-zinc-50/25 border border-zinc-50/25 backdrop-blur rounded-full"
+        >
+          <MailToIcon width="20" height="20"></MailToIcon>
+        </a>
       </div>
     </nav>
   );
