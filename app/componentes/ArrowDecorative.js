@@ -1,6 +1,6 @@
 export function ArrowDecorative() {
   return (
-    <svg className="absolute left-0 w-[50vw] h-20 pointer-events-none">
+    <svg className="sm:absolute left-0 w-[50vw] h-20 pointer-events-none">
       <defs>
         <marker
           id="arrow"

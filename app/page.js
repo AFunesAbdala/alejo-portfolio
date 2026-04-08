@@ -27,7 +27,7 @@ export default function Home() {
         <EyeAnimation></EyeAnimation>
       </div>
       <DecorativeFrame></DecorativeFrame>
-      <div className="flex flex-col items-center justify-center w-full sm:max-w-360 sm:p-40 pt-40 px-2">
+      <div className="flex flex-col items-center justify-center w-full sm:max-w-360 sm:p-40 pt-40 px-2 mb-20">
         <div className="flex flex-col gap-52 w-full sm:max-w-283.5">
           <div className="flex flex-col items-center gap-25">
             <div className="hidden w-full sm:flex flex-row items-center justify-between">
@@ -80,7 +80,7 @@ export default function Home() {
               <p className="italic text-zinc-500">Steve Jobs</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-20 w-full max-w-283.5">
+          <div className="flex flex-col sm:grid grid-cols-2 sm:gap-20 gap-8 w-full sm:max-w-283.5">
             <p className="max-w-131.5">
               I’m a product designer at Adinfluence. I create interfaces that
               work beautifully, driven by simplicity and purpose.
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-6 gap-3 w-full max-w-360">
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 w-full sm:max-w-360 px-2 sm:px-0">
         <a
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
@@ -122,7 +122,7 @@ export default function Home() {
             src="./img/switchwear_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Switch Wear
               <br></br>
@@ -153,7 +153,7 @@ export default function Home() {
             src="./img/adinfluence_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Adinfluence
               <br></br>
@@ -180,7 +180,7 @@ export default function Home() {
             src="./img/hinfluencer_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Hi Influencer
               <br></br>
@@ -192,7 +192,7 @@ export default function Home() {
             status={numberProyect === 14}
           ></HoverCircles>
         </a>
-        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+        <div className="hidden relative h-45 sm:flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
@@ -213,7 +213,7 @@ export default function Home() {
             src="./img/sibolife_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Sibo Life
               <br></br>
@@ -238,7 +238,7 @@ export default function Home() {
             src="./img/destiny_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Destiny 2 Companion
               <br></br>
@@ -247,7 +247,7 @@ export default function Home() {
           </div>
           <HoverCircles number={6} status={numberProyect === 6}></HoverCircles>
         </a>
-        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+        <div className="hidden relative h-45 sm:flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
@@ -268,7 +268,7 @@ export default function Home() {
             src="./img/apple_notes.png"
             className="w-full h-full object-cover rounded-xl transform-gpu"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Apple Notes
               <br></br>
@@ -277,7 +277,7 @@ export default function Home() {
           </div>
           <HoverCircles number={8} status={numberProyect === 8}></HoverCircles>
         </a>
-        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+        <div className="hidden relative h-45 sm:flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
@@ -300,7 +300,7 @@ export default function Home() {
             src="./img/vallax_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-white text-sm leading-4">
               Vallax
               <br></br>
@@ -336,7 +336,7 @@ export default function Home() {
             src="./img/nubu_logo.png"
             className="w-full h-full object-cover rounded-xl transform-gpu"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 opacity-0 rounded-xl hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#09090b] via-[#09090b00] to-[#09090b00] duration-800 sm:opacity-0 opacity-100 rounded-xl hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4 text-white">
               Nubu
               <br></br>
@@ -368,7 +368,7 @@ export default function Home() {
             src="./img/motion.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Motion Design
               <br></br>
@@ -395,7 +395,7 @@ export default function Home() {
             src="./img/students_app_logo.png"
             className="w-full h-full object-cover rounded-xl"
           ></img>
-          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
+          <div className="absolute flex items-end justify-center h-full w-full pb-4 bg-linear-to-t from-[#ffffff] via-[#ffffff00] to-[#ffffff00] duration-800 rounded-xl sm:opacity-0 opacity-100 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm leading-4">
               Student's App
               <br></br>
@@ -404,7 +404,7 @@ export default function Home() {
           </div>
           <HoverCircles number={4} status={numberProyect === 4}></HoverCircles>
         </a>
-        <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
+        <div className="hidden relative h-45 sm:flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
@@ -413,8 +413,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
-        <div className="grid grid-cols-2 gap-20 w-full max-w-283.5">
+      <div className="flex flex-col items-center justify-center w-full max-w-360 px-2 sm:p-40 mt-20 sm:mt-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 w-full sm:max-w-283.5">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-semibold tracking-tighter">
               PRODUCT DESIGN
@@ -809,7 +809,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-full max-w-360 overflow-hidden">
+      <div className="flex flex-col-reverse sm:flex-row items-center justify-center w-full sm:max-w-360 overflow-hidden mt-20 sm:mt-0 px-2 sm:px-0">
         <div className="relative flex items-center justify-center w-180 h-180">
           <CircleBorder
             rotate={"rotate-[-90deg]"}
@@ -935,11 +935,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative w-full flex items-center justify-center">
+      <div className="relative w-full flex flex-col sm:flex-row sm:items-center justify-center px-2 sm:px-0 mt-20 sm:mt-0">
         <ArrowDecorative></ArrowDecorative>
-        <div className="flex flex-col items-center justify-center w-full max-w-360 p-40">
-          <div className="grid grid-cols-2 gap-20 w-full max-w-283.5">
-            <div className="flex items-center">
+        <div className="flex flex-col items-center justify-center w-full sm:max-w-360 sm:p-40">
+          <div className="sm:grid grid-cols-2 gap-20 flex flex-col w-full sm:max-w-283.5">
+            <div className="hidden sm:flex items-center">
               <div className="w-2.5 h-2.5 bg-zinc-950 rounded-full"></div>
             </div>
             <div>
