@@ -135,7 +135,7 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
@@ -196,11 +196,13 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
         <a
+          href="https://play.google.com/store/apps/details?id=dev.insomnis.sibolife"
+          target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
             setIsNumberProyect(17);
@@ -251,7 +253,7 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
@@ -281,12 +283,12 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
         <a
-          href="https://drive.google.com/file/d/1WZWVJK4N7xr-lO1dGYWr3ol3FD-qOfcB/view?usp=sharing"
+          href="https://vallax-demo.web.app/"
           target="_blank"
           className="relative h-45 flex items-center justify-center bg-zinc-100 rounded-xl duration-400 hover:scale-105 hover:ring-1 hover:ring-white hover:shadow-xl hover:z-10"
           onMouseEnter={() => {
@@ -315,7 +317,7 @@ export default function Home() {
         <div className="relative h-45 flex items-center justify-center border border-zinc-200 rounded-xl duration-400 hover:scale-105">
           <div className="absolute flex items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <p className="relative z-10 text-center text-sm text-zinc-400 leading-4">
-              Our Proyect
+              Our Project
               <br></br>
               Here 😉
             </p>
@@ -349,7 +351,7 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
@@ -408,7 +410,7 @@ export default function Home() {
           <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full duration-800 rounded-xl opacity-0 hover:opacity-100 overflow-hidden">
             <LoaderIcon />
             <p className="text-center text-sm text-zinc-400 leading-4">
-              Future Proyect
+              Future Project
             </p>
           </div>
         </div>
@@ -822,22 +824,22 @@ export default function Home() {
             color="#a1a1aa"
           ></CircleBorder>
           <div className="relative flex items-center w-175 h-175 rounded-full overflow-hidden">
-            <div className="absolute flex flex-col items-center gap-2">
+            <div className="absolute flex flex-col items-center">
               <div className="max-w-175 flex items-center">
                 <div className="flex items-center animate-scroll">
                   <p className="h-30 flex items-center text-[150px] tracking-tighter text-zinc-500 font-semibold">
-                    transform.authentyc.
+                    transform.authentic.
                   </p>
                   <p className="h-30 flex items-center text-[150px] tracking-tighter text-zinc-500 font-semibold">
-                    transform.authentyc.
+                    transform.authentic.
                   </p>
                 </div>
                 <div className="flex items-center animate-scroll">
                   <p className="h-30 flex items-center justify-center text-[150px] tracking-tighter text-zinc-500 font-semibold">
-                    transform.authentyc.
+                    transform.authentic.
                   </p>
                   <p className="h-30 flex items-center justify-center text-[150px] tracking-tighter text-zinc-500 font-semibold">
-                    transform.authentyc.
+                    transform.authentic.
                   </p>
                 </div>
               </div>
@@ -929,7 +931,7 @@ export default function Home() {
           ></CircleBorder>
           <div className=" flex items-center justify-center w-175 h-175 rounded-full overflow-hidden">
             <img
-              src="https://i.pinimg.com/736x/aa/88/89/aa8889318f0dbd57d584f8b68f039211.jpg"
+              src="./img/alejo_perfil.png"
               className="w-full h-full object-cover"
             ></img>
           </div>
