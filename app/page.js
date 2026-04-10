@@ -821,7 +821,7 @@ export default function Home() {
           <CircleBorder
             rotate={"rotate-[-225deg]"}
             r="48.5%"
-            color="#a1a1aa"
+            color="#A1A1AA"
           ></CircleBorder>
           <div className="relative flex items-center w-175 h-175 rounded-full overflow-hidden">
             <div className="absolute flex flex-col items-center">
