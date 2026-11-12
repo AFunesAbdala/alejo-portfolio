@@ -82,7 +82,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:grid grid-cols-2 sm:gap-20 gap-8 w-full sm:max-w-283.5">
             <p className="max-w-131.5">
-              I’m a product designer at Adinfluence. I create interfaces that
+              I’m a product designer obsessed with details. I create interfaces that
               work beautifully, driven by simplicity and purpose.
             </p>
             <CTAButton
